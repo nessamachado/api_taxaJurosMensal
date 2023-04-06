@@ -34,9 +34,18 @@ public class TaxaJurosMensalMapper {
         return listEntity;
     }
 
-    public TaxaJurosMensalDTO createEntityToDto(TaxaJurosMensalEntity taxaJurosMensalEntity){
-        ModelMapper modelMapper = new ModelMapper();
-        return modelMapper.map(taxaJurosMensalEntity, TaxaJurosMensalDTO.class);
+    public TaxaJurosMensalDTO createEntityToDto(TaxaJurosMensalEntity taxaJurosEntity) {
+        TaxaJurosMensalDTO taxaJurosDTO = new TaxaJurosMensalDTO();
+        taxaJurosDTO.setId(taxaJurosEntity.getId());
+        taxaJurosDTO.setMes(taxaJurosEntity.getMes());
+        taxaJurosDTO.setModalidade(taxaJurosEntity.getModalidade());
+        taxaJurosDTO.setPosicao(taxaJurosEntity.getPosicao());
+        taxaJurosDTO.setInstituicaoFinanceira(taxaJurosEntity.getInstituicaoFinanceira());
+        taxaJurosDTO.setTaxaJurosAoMes(taxaJurosEntity.getTaxaJurosAoMes());
+        taxaJurosDTO.setTaxaJurosAoAno(taxaJurosEntity.getTaxaJurosAoAno());
+        taxaJurosDTO.setCnpj8(taxaJurosEntity.getCnpj8());
+        taxaJurosDTO.setAnoMes(taxaJurosEntity.getAnoMes());
+        return taxaJurosDTO;
     }
 
     public List<TaxaJurosMensalDTO> createEntityToDtoList(List<TaxaJurosMensalEntity> listEntity){
@@ -47,15 +56,15 @@ public class TaxaJurosMensalMapper {
         return listDto;
     }
 
-    public TaxaJurosMensalResponse createDtoToResponse(TaxaJurosMensalDTO taxaJurosMensalDTO){
+    public TaxaJurosMensalResponse createDtoToResponse(TaxaJurosMensalDTO taxaJurosDTO) {
         ModelMapper modelMapper = new ModelMapper();
-        return modelMapper.map(taxaJurosMensalDTO, TaxaJurosMensalResponse.class);
+        return modelMapper.map(taxaJurosDTO, TaxaJurosMensalResponse.class);
     }
 
-    public List<TaxaJurosMensalResponse> createDtoToResponseList(List<TaxaJurosMensalDTO> listDto){
+    public List<TaxaJurosMensalResponse> createDtoToResponseList(List<TaxaJurosMensalDTO> listDto) {
         List<TaxaJurosMensalResponse> taxaResponseList = new ArrayList<>(listDto.size());
-        for(TaxaJurosMensalDTO taxa : listDto) {
-            taxaResponseList.add(createDtoToResponse(taxa));
+        for (TaxaJurosMensalDTO taxas : listDto) {
+            taxaResponseList.add(createDtoToResponse(taxas));
         }
         return taxaResponseList;
     }
