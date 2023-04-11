@@ -6,6 +6,8 @@ import com.vanessa.api_taxaJurosMensal.model.mapper.TaxaJurosMensalMapper;
 import com.vanessa.api_taxaJurosMensal.model.response.TaxaJurosMensalResponse;
 import com.vanessa.api_taxaJurosMensal.repositorie.TaxaJurosMensalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -59,4 +61,12 @@ public class TaxaJurosMensalService {
     public void delete (Long id){
         rep.deleteById(id);
     }
+
+    public List<TaxaJurosMensalResponse> listarPorPagina(Pageable pageable) {
+        Page<TaxaJurosMensalEntity> taxaJurosMensalEntityPage = rep.findAll(pageable);
+        List<TaxaJurosMensalDTO> taxaJurosMensalDTOList = taxaJurosMensalMapper.createEntityToDtoList(taxaJurosMensalEntityPage.toList());
+        List<TaxaJurosMensalResponse> taxaJurosMensalResponseList = taxaJurosMensalMapper.createDtoToResponseList(taxaJurosMensalDTOList);
+        return taxaJurosMensalResponseList;
+    }
+
 }

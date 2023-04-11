@@ -5,6 +5,7 @@ import com.vanessa.api_taxaJurosMensal.model.mapper.TaxaJurosMensalMapper;
 import com.vanessa.api_taxaJurosMensal.model.response.TaxaJurosMensalResponse;
 import com.vanessa.api_taxaJurosMensal.service.TaxaJurosMensalService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -48,6 +49,12 @@ public class TaxaJurosMensalController {
     public ResponseEntity<TaxaJurosMensalResponse> deletar(@PathVariable("id") Long id){
         taxaJurosMensalService.delete(id);
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/consultaPagina")
+    public ResponseEntity buscarPorPagina(@RequestParam(value= "page", defaultValue = "0") Integer page,
+                                          @RequestParam(value = "size", defaultValue = "10") Integer size){
+        return  ResponseEntity.ok(taxaJurosMensalService.listarPorPagina(PageRequest.of(page, size)));
     }
 
 }
