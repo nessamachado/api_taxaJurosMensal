@@ -69,4 +69,11 @@ public class TaxaJurosMensalService {
         return taxaJurosMensalResponseList;
     }
 
+    public List<TaxaJurosMensalResponse> listarAnoMes(String anoMes) {
+        List<TaxaJurosMensalEntity> taxaJurosMensalEntityList = rep.findByAnoMes(anoMes);
+        List<TaxaJurosMensalDTO> taxaJurosMensalDTOList = taxaJurosMensalMapper.createEntityToDtoList(taxaJurosMensalEntityList);
+        List<TaxaJurosMensalResponse> taxaJurosMensalResponseList = taxaJurosMensalMapper.createDtoToResponseList(taxaJurosMensalDTOList);
+        return taxaJurosMensalResponseList;
+    }
+
 }

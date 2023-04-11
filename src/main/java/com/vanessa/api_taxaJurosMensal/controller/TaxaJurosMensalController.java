@@ -57,4 +57,10 @@ public class TaxaJurosMensalController {
         return  ResponseEntity.ok(taxaJurosMensalService.listarPorPagina(PageRequest.of(page, size)));
     }
 
+    @GetMapping("/anoMes/{anoMes}")
+    public ResponseEntity<List<TaxaJurosMensalResponse>> buscarAnoMes(@PathVariable("anoMes") String anoMes) {
+        List<TaxaJurosMensalResponse> taxaJurosMensalResponseList = taxaJurosMensalService.listarAnoMes(anoMes);
+        return ResponseEntity.ok().body(taxaJurosMensalResponseList);
+    }
+
 }
