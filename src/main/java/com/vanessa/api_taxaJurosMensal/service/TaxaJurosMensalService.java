@@ -25,4 +25,11 @@ public class TaxaJurosMensalService {
         List<TaxaJurosMensalResponse> taxaJurosMensalResponseList =taxaJurosMensalMapper.createDtoToResponseList(taxaJurosMensalDTOList);
         return taxaJurosMensalResponseList;
     }
+
+    public TaxaJurosMensalResponse encontrarPorId(Long id){
+        TaxaJurosMensalEntity taxaJurosMensalEntity = rep.findById(id).orElse(null);
+        TaxaJurosMensalDTO taxaJurosMensalDTO = taxaJurosMensalMapper.createEntityToDto(taxaJurosMensalEntity);
+        TaxaJurosMensalResponse taxaJurosMensalResponse = taxaJurosMensalMapper.createDtoToResponse(taxaJurosMensalDTO);
+        return taxaJurosMensalResponse;
+    }
 }
