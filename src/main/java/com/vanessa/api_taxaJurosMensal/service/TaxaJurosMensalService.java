@@ -32,4 +32,11 @@ public class TaxaJurosMensalService {
         TaxaJurosMensalResponse taxaJurosMensalResponse = taxaJurosMensalMapper.createDtoToResponse(taxaJurosMensalDTO);
         return taxaJurosMensalResponse;
     }
+
+    public TaxaJurosMensalResponse insert (TaxaJurosMensalDTO taxaJurosMensalDTO){
+        TaxaJurosMensalEntity taxaJurosMensalEntity = taxaJurosMensalMapper.createDtoToEntity(taxaJurosMensalDTO);
+        rep.save(taxaJurosMensalEntity);
+        TaxaJurosMensalDTO taxaJurosMensalDTO1 = taxaJurosMensalMapper.createEntityToDto(taxaJurosMensalEntity);
+        return taxaJurosMensalMapper.createDtoToResponse(taxaJurosMensalDTO1);
+    }
 }
