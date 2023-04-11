@@ -38,4 +38,10 @@ public class TaxaJurosMensalController {
         return ResponseEntity.created(null).body(taxaJurosMensalResponse);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<TaxaJurosMensalResponse> alterar(@RequestBody TaxaJurosMensalDTO taxaJurosMensalDTO, @PathVariable("id") Long id){
+        TaxaJurosMensalResponse taxaJurosMensalResponse = taxaJurosMensalService.update(taxaJurosMensalDTO, id);
+        return ResponseEntity.ok().body(taxaJurosMensalResponse);
+    }
+
 }
