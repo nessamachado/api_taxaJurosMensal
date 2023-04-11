@@ -44,4 +44,10 @@ public class TaxaJurosMensalController {
         return ResponseEntity.ok().body(taxaJurosMensalResponse);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<TaxaJurosMensalResponse> deletar(@PathVariable("id") Long id){
+        taxaJurosMensalService.delete(id);
+        return ResponseEntity.ok().build();
+    }
+
 }

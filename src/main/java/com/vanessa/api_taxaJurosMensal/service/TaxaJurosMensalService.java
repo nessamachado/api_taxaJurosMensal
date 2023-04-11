@@ -55,4 +55,8 @@ public class TaxaJurosMensalService {
         TaxaJurosMensalResponse taxaJurosMensalResponse  =  taxaJurosMensalMapper.createDtoToResponse(taxaJurosMensalDTO1);
         return taxaJurosMensalResponse;
     }
+
+    public void delete (Long id){
+        rep.deleteById(id);
+    }
 }
