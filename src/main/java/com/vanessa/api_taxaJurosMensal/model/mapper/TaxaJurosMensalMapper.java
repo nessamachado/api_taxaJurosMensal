@@ -1,5 +1,6 @@
 package com.vanessa.api_taxaJurosMensal.model.mapper;
 
+import com.vanessa.api_taxaJurosMensal.Generated;
 import com.vanessa.api_taxaJurosMensal.model.dto.TaxaJurosMensalDTO;
 import com.vanessa.api_taxaJurosMensal.model.entities.TaxaJurosMensalEntity;
 import com.vanessa.api_taxaJurosMensal.model.response.TaxaJurosMensalResponse;
@@ -9,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.ArrayList;
 import java.util.List;
 
+@Generated
 @Configuration
 public class TaxaJurosMensalMapper {
 

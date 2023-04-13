@@ -1,6 +1,7 @@
 package com.vanessa.api_taxaJurosMensal.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.vanessa.api_taxaJurosMensal.Generated;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,6 +9,7 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.util.List;
 
+@Generated
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

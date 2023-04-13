@@ -1,11 +1,13 @@
 package com.vanessa.api_taxaJurosMensal.model.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.vanessa.api_taxaJurosMensal.Generated;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Generated
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor

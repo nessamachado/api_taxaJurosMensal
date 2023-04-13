@@ -1,5 +1,6 @@
 package com.vanessa.api_taxaJurosMensal.exceptions;
 
+import com.vanessa.api_taxaJurosMensal.Generated;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -7,6 +8,7 @@ import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+@Generated
 @RestControllerAdvice
 public class ExceptionConfig {
 

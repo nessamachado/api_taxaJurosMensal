@@ -1,5 +1,6 @@
 package com.vanessa.api_taxaJurosMensal.model.entities;
 
+import com.vanessa.api_taxaJurosMensal.Generated;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 
+@Generated
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
