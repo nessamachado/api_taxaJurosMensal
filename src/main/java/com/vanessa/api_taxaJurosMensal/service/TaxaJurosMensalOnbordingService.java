@@ -1,6 +1,5 @@
 package com.vanessa.api_taxaJurosMensal.service;
 
-import com.sun.istack.NotNull;
 import com.vanessa.api_taxaJurosMensal.feignTaxaJurosMensal.ClientTaxaJurosMensal;
 import com.vanessa.api_taxaJurosMensal.model.dto.RootDTO;
 import com.vanessa.api_taxaJurosMensal.model.dto.TaxaJurosMensalDTO;

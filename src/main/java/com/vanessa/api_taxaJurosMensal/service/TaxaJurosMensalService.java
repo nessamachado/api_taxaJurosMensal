@@ -43,20 +43,15 @@ public class TaxaJurosMensalService {
     }
 
     public TaxaJurosMensalResponse update(TaxaJurosMensalDTO taxaJurosMensalDTO, Long id){
-        TaxaJurosMensalEntity taxaJurosMensalEntity = rep.findById(id).orElse(null);
-        taxaJurosMensalEntity.setMes(taxaJurosMensalDTO.getMes());
-        taxaJurosMensalEntity.setModalidade(taxaJurosMensalDTO.getModalidade());
-        taxaJurosMensalEntity.setPosicao(taxaJurosMensalDTO.getPosicao());
-        taxaJurosMensalEntity.setInstituicaoFinanceira(taxaJurosMensalDTO.getInstituicaoFinanceira());
-        taxaJurosMensalEntity.setTaxaJurosAoMes(taxaJurosMensalDTO.getTaxaJurosAoMes());
-        taxaJurosMensalEntity.setTaxaJurosAoAno(taxaJurosMensalDTO.getTaxaJurosAoAno());
-        taxaJurosMensalEntity.setCnpj8(taxaJurosMensalDTO.getCnpj8());
-        taxaJurosMensalEntity.setAnoMes(taxaJurosMensalDTO.getAnoMes());
+        TaxaJurosMensalEntity taxaJurosMensalEntity = taxaJurosMensalMapper.createDtoToEntity(taxaJurosMensalDTO);
+        taxaJurosMensalEntity.setId(id);
         rep.save(taxaJurosMensalEntity);
         TaxaJurosMensalDTO taxaJurosMensalDTO1 = taxaJurosMensalMapper.createEntityToDto(taxaJurosMensalEntity);
-        TaxaJurosMensalResponse taxaJurosMensalResponse  =  taxaJurosMensalMapper.createDtoToResponse(taxaJurosMensalDTO1);
+        TaxaJurosMensalResponse taxaJurosMensalResponse = taxaJurosMensalMapper.createDtoToResponse(taxaJurosMensalDTO1);
         return taxaJurosMensalResponse;
+
     }
+
 
     public void delete (Long id){
         rep.deleteById(id);
